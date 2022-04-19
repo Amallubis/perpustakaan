@@ -1,0 +1,6 @@
+<center>
+    <h1>Perpustakaan</h1>
+    {% if user.is_authenticated %}
+        <p> Halo, <strong>{{user}}</strong> ! | <a href=" {% url 'keluar' %} ">Keluar</a> | <a href=" {% url 'signup' %} ">Signup</a> </p>
+    {% endif %}
+</center>

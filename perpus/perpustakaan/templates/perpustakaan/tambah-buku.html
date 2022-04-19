@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block contents %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Input Buku</h1>
+        </div>
+        {% if pesan %}
+            <div class="alert alert-primary">{{pesan}}</div> 
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <form action=" {% url 'perpustakaan:tambahbuku' %} " method="post">
+                {% csrf_token %}
+            {{form.as_p}}
+            <a href=" {% url 'buku' %}" class="btn btn-danger">Kembali</a>
+            <button class="btn btn-primary"> Kirim</button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock contents %}
